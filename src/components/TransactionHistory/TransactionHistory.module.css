@@ -1,0 +1,29 @@
+.table {
+  width: 600px;
+}
+.thead {
+  background-color: rgb(73, 202, 214);
+}
+.tr {
+  height: 40px;
+}
+.tbody {
+  background-color: rgb(227, 227, 238);
+}
+
+.th {
+  color: aliceblue;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+.td {
+  color: gray;
+}
+
+.td:first-child {
+  text-transform: capitalize;
+}
+td {
+  text-align: center;
+}
