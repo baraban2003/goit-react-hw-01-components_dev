@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
+  const { followers, views, likes } = stats;
   return (
     <div className={s.profile}>
       <div className={s.profileContent}>
@@ -16,19 +17,19 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
           <li>
             <span className={s.label}>Followers </span>
             <span className={s.quantity}>
-              {new Intl.NumberFormat('en-IN').format(stats.followers)}
+              {new Intl.NumberFormat('en-IN').format(followers)}
             </span>
           </li>
           <li>
             <span className={s.label}>Views </span>
             <span className={s.quantity}>
-              {new Intl.NumberFormat('en-IN').format(stats.views)}
+              {new Intl.NumberFormat('en-IN').format(views)}
             </span>
           </li>
           <li>
             <span className={s.label}>Likes </span>
             <span className={s.quantity}>
-              {new Intl.NumberFormat('en-IN').format(stats.likes)}
+              {new Intl.NumberFormat('en-IN').format(likes)}
             </span>
           </li>
         </ul>

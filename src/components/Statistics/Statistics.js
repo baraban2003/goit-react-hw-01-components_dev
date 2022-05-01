@@ -12,15 +12,15 @@ export const newStat = Object.values(
   }, {})
 );
 
-const Statistics = ({ title = 'Upload stats', stats }) => {
+const Statistics = ({ title, stats }) => {
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>{title}</h2>
+      {title === undefined ? <h2></h2> : <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.statList}>
-        {stats.map(e => (
+        {stats.map(({ id, label, percentage }) => (
           <li
-            key={e.id}
+            key={id}
             style={{
               backgroundColor: `#${Math.floor(
                 Math.random() * 16777215
@@ -28,8 +28,8 @@ const Statistics = ({ title = 'Upload stats', stats }) => {
             }}
             className={s.item}
           >
-            <span className={s.label}>{e.label}</span>
-            <span className={s.percentage}>{e.percentage}%</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
