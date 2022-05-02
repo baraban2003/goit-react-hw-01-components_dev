@@ -12,10 +12,10 @@ export const newStat = Object.values(
   }, {})
 );
 
-const Statistics = ({ title, stats }) => {
+const Statistics = ({ title = 'Statistic', stats }) => {
   return (
     <section className={s.statistics}>
-      {title === undefined ? <h2></h2> : <h2 className={s.title}>{title}</h2>}
+      {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.statList}>
         {stats.map(({ id, label, percentage }) => (
